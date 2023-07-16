@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nlight/items/search_params.dart';
 
 import '../../catalogs/desu.dart';
 import '../../catalogs/parser.dart';
@@ -15,7 +16,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 1;
-  int _page = 1;
+  SearchParams params = SearchParams();
 
   late Future<List<Manga>> _mangas;
 
@@ -27,12 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void getContent() {
     Catalog catalog = Desu();
-    _mangas = catalog.searchManga(_page);
+    _mangas = catalog.searchManga(params);
   }
 
   void _incrementCounter() async {
     if (_counter == 50) {
-      _page += 1;
+      params.page++;
       getContent();
       _counter = 0;
     }
@@ -87,8 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
         useLegacyColorScheme: false,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.library_books), label: "Library"),
+          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: "Library"),
           BottomNavigationBarItem(icon: Icon(Icons.web), label: "Shikimori"),
           BottomNavigationBarItem(icon: Icon(Icons.history), label: "History"),
         ],
