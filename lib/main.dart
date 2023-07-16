@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nlight/ui/widgets/bottom_bar_widget.dart';
 import 'package:nlight/ui/widgets/side_widget.dart';
 
 void main() {
@@ -54,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),]
       ),
+      bottomNavigationBar: const BottomBarWidget(),
     );
   }
 }
