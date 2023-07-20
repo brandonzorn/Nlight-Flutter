@@ -1,4 +1,4 @@
-import 'package:nlight/catalogs/parser.dart';
+import 'package:nlight/catalogs/catalog.dart';
 import 'package:nlight/utils/net.dart';
 
 import '../items/manga_items.dart';

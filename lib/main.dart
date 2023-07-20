@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nlight/ui/widgets/bottom_bar_widget.dart';
-import 'package:nlight/ui/widgets/side_widget.dart';
+import 'package:nlight/ui/pages/home_page.dart';
+import 'package:nlight/ui/widgets/home_drawer_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,14 +33,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,14 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Row(
-        children: [Row(
-          children: <Widget>[
-            SafeArea(child: SideWidget()),
-          ],
-        ),]
-      ),
-      bottomNavigationBar: const BottomBarWidget(),
+      body: const HomePage(),
+      drawer: const HomeDrawer(),
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:nlight/items/search_params.dart';
 
 import '../items/manga_items.dart';
 
-class Catalog {
+abstract class Catalog {
   Future<List<Manga>> searchManga(SearchParams form) async {
     return [];
   }
